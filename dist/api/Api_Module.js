@@ -1,4 +1,5 @@
 "use strict";
+var express = require('express');
 var request = require('superagent');
 var CronJob = require('cron').CronJob;
 var _ = require('underscore');
@@ -46,6 +47,11 @@ var Api_Module = (function () {
         }, function () {
             console.log("Cron Ended!!");
         }, true, 'Asia/Kolkata', null, true);
+        var port = process.env.PORT || 3001;
+        var app = express();
+        app.listen(port, function () {
+            console.log('Cron started on ' + port);
+        });
     };
     return Api_Module;
 }());

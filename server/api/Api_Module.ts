@@ -1,3 +1,5 @@
+import * as express from 'express'
+
 let request = require('superagent');
 let CronJob = require('cron').CronJob;
 let _ = require('underscore');
@@ -47,5 +49,10 @@ export abstract class Api_Module {
             null,
             true
         );
+        let port = process.env.PORT || 3001;
+        let app: express.Application = express();
+        app.listen(port, function() {
+            console.log('Cron started on ' + port);
+        });
     }
 }
