@@ -12,9 +12,7 @@ var Api_Module = (function () {
             console.log("Current Time: " + now.getHours() + ":" + now.getMinutes());
             if (now.getHours() > 5 && now.getHours() < 14) {
                 console.log("Ping dbcron");
-                request.get("https://dbcron.herokuapp.com").end(function (err, result) {
-                    console.log(result);
-                });
+                request.get("https://dbcron.herokuapp.com");
             }
         }, function () {
             console.log("Monitor Ended!!");
