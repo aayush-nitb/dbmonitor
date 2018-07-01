@@ -10,6 +10,7 @@ export abstract class Api_Module {
             '0 */10 * * * *',
             () => {
                 let now = new Date();
+                console.log("Current Time: " + now.getHours() + ":" + now.getMinutes());
                 if (now.getHours() > 10 && now.getHours() < 19) {
                     console.log("Ping dbcron");
                     request.get("https://dbcron.herokuapp.com").end((err, result) => {
