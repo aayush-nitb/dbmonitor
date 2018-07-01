@@ -10,7 +10,7 @@ var Api_Module = (function () {
         new CronJob('0 */10 * * * *', function () {
             var now = new Date();
             console.log("Current Time: " + now.getHours() + ":" + now.getMinutes());
-            if (now.getHours() > 10 && now.getHours() < 19) {
+            if (now.getHours() > 5 && now.getHours() < 14) {
                 console.log("Ping dbcron");
                 request.get("https://dbcron.herokuapp.com").end(function (err, result) {
                     console.log(result);
