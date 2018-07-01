@@ -11,7 +11,10 @@ export abstract class Api_Module {
             () => {
                 let now = new Date();
                 if (now.getHours() > 10 && now.getHours() < 19) {
-                    request.get("https://dbcron.herokuapp.com");
+                    console.log("Ping dbcron");
+                    request.get("https://dbcron.herokuapp.com").end((err, result) => {
+                        console.log(result);
+                    });
                 }
             }, () => {
                 console.log("Monitor Ended!!");
