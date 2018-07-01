@@ -1,7 +1,7 @@
 {
-  "name": "dbcron",
+  "name": "dbmonitor",
   "version": "0.0.1",
-  "description": "Cron jobs for dbstore",
+  "description": "Monitor job to awake dbcron",
   "main": "main.js",
   "scripts": {
     "start": "node ./dist/main.js",

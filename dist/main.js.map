@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.ts"],"names":[],"mappings":";AAAA,2BAA2B,kBAE3B,CAAC,CAF4C;AAE7C,uBAAU,CAAC,KAAK,EAAE,CAAC","file":"main.js","sourcesContent":["import { Api_Module } from './api/Api_Module'\r\n\r\nApi_Module.serve();"],"sourceRoot":"C:\\Aayush\\Apps\\dbcron/server"}
+{"version":3,"sources":["main.ts"],"names":[],"mappings":";AAAA,2BAA2B,kBAE3B,CAAC,CAF4C;AAE7C,uBAAU,CAAC,KAAK,EAAE,CAAC","file":"main.js","sourcesContent":["import { Api_Module } from './api/Api_Module'\n\nApi_Module.serve();"],"sourceRoot":"C:\\Aayush\\Apps\\dbmonitor/server"}
