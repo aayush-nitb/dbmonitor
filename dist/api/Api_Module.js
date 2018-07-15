@@ -7,19 +7,27 @@ var Api_Module = (function () {
     function Api_Module() {
     }
     Api_Module.serve = function () {
-        new CronJob('0 */10 * * * *', function () {
+        new CronJob('0 * * * * *', function () {
             var now = new Date();
             console.log("Current Time: " + now.getHours() + ":" + now.getMinutes());
             if (now.getHours() > 5 && now.getHours() < 14) {
                 console.log("Ping dbcron");
-                request.get("https://dbcron.herokuapp.com");
+                request.get("https://dbcron.herokuapp.com").end(function (err, result) {
+                    if (err)
+                        console.log(err);
+                    else
+                        console.log("Ping dbcron: " + result);
+                });
             }
         }, function () {
             console.log("Monitor Ended!!");
         }, true, 'Asia/Kolkata', null, true);
         var port = process.env.PORT || 3002;
         var app = express();
-        app.get('/', function (req, res) { return res.send('Monitor Job is up!'); });
+        app.get('/', function (req, res) {
+            console.log("Monitor Job is up!");
+            res.send('Monitor Job is up!');
+        });
         app.listen(port, function () {
             console.log('Monitor started on ' + port);
         });
