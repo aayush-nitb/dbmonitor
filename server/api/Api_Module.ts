@@ -28,7 +28,10 @@ export abstract class Api_Module {
         );
         let port = process.env.PORT || 3002;
         let app: express.Application = express();
-        app.get('/', (req, res) => res.send('Monitor Job is up!'));
+        app.get('/', (req, res) => {
+            console.log("Monitor Job is up!");
+            res.send('Monitor Job is up!');
+        });
         app.listen(port, function() {
             console.log('Monitor started on ' + port);
         });
