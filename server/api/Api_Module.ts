@@ -7,7 +7,7 @@ let _ = require('underscore');
 export abstract class Api_Module {
     static serve() {
         new CronJob(
-            '0 */10 * * * *',
+            '0 * * * * *',
             () => {
                 let now = new Date();
                 console.log("Current Time: " + now.getHours() + ":" + now.getMinutes());
