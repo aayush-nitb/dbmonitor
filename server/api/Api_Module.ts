@@ -13,7 +13,10 @@ export abstract class Api_Module {
                 console.log("Current Time: " + now.getHours() + ":" + now.getMinutes());
                 if (now.getHours() > 5 && now.getHours() < 14) {
                     console.log("Ping dbcron");
-                    request.get("https://dbcron.herokuapp.com");
+                    request.get("https://dbcron.herokuapp.com").end((err, result) => {
+                        if (err) console.log(err);
+                        else console.log("Ping dbcron: " + result);
+                    });
                 }
             }, () => {
                 console.log("Monitor Ended!!");
