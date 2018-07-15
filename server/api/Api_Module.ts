@@ -15,7 +15,7 @@ export abstract class Api_Module {
                     console.log("Ping dbcron");
                     request.get("https://dbcron.herokuapp.com").end((err, result) => {
                         if (err) console.log(err);
-                        else console.log("Ping dbcron: " + result);
+                        else console.log("Ping dbcron: " + result.body);
                     });
                 }
             }, () => {

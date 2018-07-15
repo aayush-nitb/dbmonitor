@@ -16,7 +16,7 @@ var Api_Module = (function () {
                     if (err)
                         console.log(err);
                     else
-                        console.log("Ping dbcron: " + result);
+                        console.log("Ping dbcron: " + result.body);
                 });
             }
         }, function () {
