@@ -12,10 +12,10 @@ export abstract class Api_Module {
                 let now = new Date();
                 console.log("Current Time: " + now.getHours() + ":" + now.getMinutes());
                 if (now.getHours() > 5 && now.getHours() < 14) {
-                    console.log("Ping dbcron");
+                    console.log("Pinging dbcron...");
                     request.get("https://dbcron.herokuapp.com").end((err, result) => {
                         if (err) console.log(err);
-                        else console.log("Ping dbcron: " + result.body);
+                        else console.log("Cron Job is up!");
                     });
                 }
             }, () => {
@@ -29,7 +29,7 @@ export abstract class Api_Module {
         let port = process.env.PORT || 3002;
         let app: express.Application = express();
         app.get('/', (req, res) => {
-            console.log("Monitor Job is up!");
+            console.log("Awaken!");
             res.send('Monitor Job is up!');
         });
         app.listen(port, function() {
